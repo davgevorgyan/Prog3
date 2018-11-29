@@ -41,7 +41,19 @@ var grassArr = [];
 var xotakerArr = [];
 var GishatichArr = [];
 
+ex = 3;
+var i = setInterval( function(){
+    console.log( ex );
+    if( ex==0 ){     
+        ex = 4;
+                  
+    } 
+    ex -= 1;
 
+}, 1000 );
+
+
+ 
 function setup() {
     frameRate(5);
     createCanvas(matrix[0].length * side, matrix.length * side);
@@ -78,7 +90,18 @@ function draw() {
         for (var x = 0; x < matrix[y].length; x++) {
 
             if (matrix[y][x] == 1) {
-                fill("green");
+                if(ex==3){
+                    fill("#ddfff8");
+                }
+                if(ex==2){
+                    fill("#caff59");
+                }
+                if(ex==1){
+                    fill("#95ff4f");
+                }
+                if(ex==0){
+                    fill("#f4a641");
+                }
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 0) {
